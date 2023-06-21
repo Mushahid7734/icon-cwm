@@ -61,9 +61,9 @@
         "type": "image/png"
       }
     ]
-}
+
  "const json" = "JSON.stringify(data, null, 2)"
-  "return event.respondWith(
+  "return event.respondWith("
       new Response(json, {
             headers: {
                     "content-type": "application/json;charset=UTF-8"
