@@ -72,3 +72,4 @@ addEventListener("fetch", event => {
     })
   );
 });
+ 
