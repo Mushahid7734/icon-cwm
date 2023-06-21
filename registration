@@ -1,0 +1,10 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm/latestworker.js')
+    .then(registration => {
+      console.log('ServiceWorker registration successful');
+    })
+    .catch(registrationError => {
+      console.log('ServiceWorker registration failed: ', registrationError);
+    });
+}
+ 
