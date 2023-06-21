@@ -63,7 +63,7 @@ addEventListener("fetch", event => {
       purpose: "any maskable"
       }
     ],
-    "shortcuts": [
+    shortcuts: [
       {
       name: "Class with Mason",
       short_name: "Class with Mason",
