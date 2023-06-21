@@ -62,7 +62,6 @@ addEventListener("fetch", event => {
       }
     ]
   };
-
   const json = JSON.stringify(data, null, 2);
   event.respondWith(
     new Response(json, {
