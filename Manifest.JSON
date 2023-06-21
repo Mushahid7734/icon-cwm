@@ -1,4 +1,4 @@
-"addEventListener"("fetch", event => {
+"addEventListener":"fetch", event => {
   "const data" = {
     "name": "Class With Mason",
     "short_name": "Class w Mason",
