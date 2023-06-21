@@ -1,60 +1,45 @@
-'use strict';
-
-const CACHE_VERSION = 1;
-const CURRENT_CACHES = { offline: `offline-v${CACHE_VERSION}` };
-const OFFLINE_URL = '/offline.html';
-
-function createCacheBustedRequest(url) {
-  let request = new Request(url, { cache: 'reload' });
-  
-  if ('cache' in request) {
-    return request;
-  }
-  
-  let bustedUrl = new URL(url, self.location.href);
-  bustedUrl.search += (bustedUrl.search ? '&' : '') + 'cachebust=' + Date.now();
-  return new Request(bustedUrl);
+{
+  "name": "Class  With Mason",
+  "short_name": "Class w Mason",
+  "description": " Install Now- Let's fuel creativity",
+  "lang": "en-US",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "start_url": "/?utm_source=homescreen",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm@main/favicon-32x32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm@main/apple-icon-72x72.png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm@main/favicon-96x96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm@main/apple-icon-120x120.png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm@main/android-icon-144x144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm@main/apple-icon-152x152.png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm@main/android-icon-192x192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm@main/android-icon-512x512.png",
+      "sizes": "512x512"
+    }
+  ]
 }
-
-self.addEventListener('install', event => {
-  event.waitUntil(
-    fetch(createCacheBustedRequest(OFFLINE_URL)).then(response => {
-      return caches.open(CURRENT_CACHES.offline).then(cache => {
-        return cache.put(OFFLINE_URL, response);
-      });
-    })
-  );
-});
-
-self.addEventListener('activate', event => {
-  let cacheWhitelist = Object.values(CURRENT_CACHES);
-  
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            console.log('Deleting out of date cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
-
-self.addEventListener('fetch', event => {
-  if (
-    event.request.mode === 'navigate' ||
-    (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))
-  ) {
-    console.log('Handling fetch event for', event.request.url);
-    
-    event.respondWith(
-      fetch(event.request).catch(error => {
-        console.log('Fetch failed; returning offline page instead.', error);
-        return caches.match(OFFLINE_URL);
-      })
-    );
-  }
-});
