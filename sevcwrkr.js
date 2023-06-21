@@ -1,5 +1,5 @@
 const js = `
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
 if (workbox) {
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
