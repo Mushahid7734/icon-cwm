@@ -62,7 +62,7 @@
       }
     ]
 
- "const json" = "JSON.stringify(data, null, 2)"
+ "const json" = "JSON.stringify":"(data, null, 2)"
   "return event.respondWith("
       new Response(json, {
             headers: {
