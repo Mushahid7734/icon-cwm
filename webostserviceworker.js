@@ -10,7 +10,7 @@ if (workbox) {
     runtime: "run-time"
   });
 
-  const FALLBACK_HTML_URL = "/cdn/app/pwa/offline/offline.html";
+  const FALLBACK_HTML_URL = "/offline.html";
   const version = workbox.core.cacheNames.suffix;
   workbox.precaching.precacheAndRoute([
     { url: FALLBACK_HTML_URL, revision: null },
