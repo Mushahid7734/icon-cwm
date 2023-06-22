@@ -1,0 +1,142 @@
+addEventListener("fetch", event => {
+  const data = {
+    name: "Fineshop Design",
+    short_name: "Fineshop Design",
+    description: "Install Now Fineshop Design - Let's fuel creativity",
+    display: "standalone",
+    prefer_related_applications: false,
+    start_url: "\/?utm_source=homescreen",
+    scope: "\/",
+    background_color: "#2196f3",
+    theme_color: "#2196f3",
+    icons: [
+      {
+      src: "\/main\/android-icon-512x512.png",
+      sizes: "512x512",
+      type: "image\/png",
+      density: "4.0",
+      purpose: "any maskable"
+      },
+      {
+      src: "\/main\/android-icon-192x192.png",
+      sizes: "192x192",
+      type: "image\/png",
+      density: "4.0",
+      purpose: "any maskable"
+      },
+      {
+      src: "\/main\/apple-icon-144x144.png",
+      sizes: "144x144",
+      type: "image\/png",
+      density: "3.0",
+      purpose: "any maskable"
+      },
+      {
+      src: "\/main\/android-icon-96x96.png",
+      sizes: "96x96",
+      type: "image\/png",
+      density: "2.0",
+      purpose: "any maskable"
+      },
+      {
+      src: "\/main\/android-icon-72x72.png",
+      sizes: "72x72",
+      type: "image\/png",
+      density: "1.5",
+      purpose: "any maskable"
+      },
+      {
+      src: "\/main\/android-icon-48x48.png",
+      sizes: "48x48",
+      type: "image\/png",
+      density: "1.0",
+      purpose: "any maskable"
+      },
+      {
+      src: "\/main\/android-icon-36x36.png",
+      sizes: "36x36",
+      type: "image\/png",
+      density: "0.75",
+      purpose: "any maskable"
+      }
+    ],
+    shortcuts: [
+      {
+      name: "Fineshop Design",
+      short_name: "Fineshop Design",
+      description: "The Best Website where you can find Blogger Widgets, Tech News, Tech Reviews, Coding related Tutorials and many more.",
+      url: "\/?utm_source=homescreen",
+      icons: [
+          {
+          src: "\/main\/android-icon-192x192.png",
+          sizes: "192x192"
+          }
+        ]
+      },
+      {
+      name: "Fineshop Design - Blog",
+      short_name: "Fineshop Design - Blog",
+      description: "Explore Fineshop Design Blog.",
+      url: "\/search?utm_source=homescreen",
+      icons: [
+          {
+          src: "\/main\/android-icon-192x192.png",
+          sizes: "192x192"
+          }
+        ]
+      },
+      {
+      name: "Blogger Widgets",
+      short_name: "Blogger Widgets",
+      description: "Useful Widgets for your Blog.",
+      url: "\/search\/label\/Widgets?utm_source=homescreen",
+      icons: [
+          {
+          src: "\/main\/android-icon-192x192.png",
+          sizes: "192x192"
+          }
+        ]
+      }
+    ],
+    screenshots: [
+      {
+      src: "\/main\/scr1.png",
+      type: "image\/png",
+      sizes: "540x720"
+      },
+      {
+      src: "\/main\/scr2.png",
+      type: "image\/png",
+      sizes: "540x720"
+      },
+      {
+      src: "\/main\/scr3.png",
+      type: "image\/png",
+      sizes: "540x720"
+      },
+      {
+      src: "\/main\/scr4.png",
+      type: "image\/png",
+      sizes: "540x720"
+      },
+      {
+      src: "\/main\/scr5.png",
+      type: "image\/png",
+      sizes: "540x720"
+      }
+    ],
+    serviceworker: {
+      src: "\/sw.js"
+    }
+  }
+
+  const json = JSON.stringify(data, null, 2)
+
+  return event.respondWith(
+    new Response(json, {
+      headers: {
+        "content-type": "application/json;charset=UTF-8"
+      }
+    })
+  )
+})  
