@@ -5,7 +5,7 @@
   "lang": "en-US",
   "display": "standalone",
   "background_color": "#ffffff",
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "https://classwithmason.com",
   "theme_color": "#ffffff",
   "orientation": "portrait",
   "dir": "ltr",
@@ -47,7 +47,7 @@
       "type": "image/png"
     },
     {
-      "src": "https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm@main/android-icon-512x512.png",
+      "src": "https://cdn.jsdelivr.net/gh/Mushahid7734/icon-cwm/an-android-icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
